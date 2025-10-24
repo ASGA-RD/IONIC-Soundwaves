@@ -43,7 +43,7 @@ const Home: React.FC = () => (
           <IonCol size="12" sizeMd="6">
             <IonCard className="news-card">
               <div className="news-img-wrap tall">
-                <img src="src/data/tracks-cover/t27.jpg" alt="Release 1" className="news-img" />
+                <img src="tracks-cover/t27.jpg" alt="Release 1" className="news-img" />
               </div>
               <IonCardHeader>
                 <IonCardTitle>Release: Indigo Rooms</IonCardTitle>
@@ -58,7 +58,7 @@ const Home: React.FC = () => (
           <IonCol size="12" sizeMd="6">
             <IonCard className="news-card">
               <div className="news-img-wrap tall">
-                <img src="src/data/tracks-cover/t30.jpg" alt="Showcase 2" className="news-img" />
+                <img src="tracks-cover/t30.jpg" alt="Showcase 2" className="news-img" />
               </div>
               <IonCardHeader>
                 <IonCardTitle>Showcase: Night Room</IonCardTitle>
@@ -76,7 +76,7 @@ const Home: React.FC = () => (
           <IonCol size="12" sizeMd="4">
             <IonCard className="news-card">
               <div className="news-img-wrap">
-                <img src="src/data/tracks-cover/t7.jpg" alt="Hip-Hop Beats" className="news-img" />
+                <img src="tracks-cover/t7.jpg" alt="Hip-Hop Beats" className="news-img" />
               </div>
               <IonCardHeader>
                 <IonCardTitle>Release: Concrete Poetry</IonCardTitle>
@@ -91,7 +91,7 @@ const Home: React.FC = () => (
           <IonCol size="12" sizeMd="4">
             <IonCard className="news-card">
               <div className="news-img-wrap">
-                <img src="src/data/tracks-cover/t8.jpg" alt="Soul Showcase" className="news-img" />
+                <img src="tracks-cover/t8.jpg" alt="Soul Showcase" className="news-img" />
               </div>
               <IonCardHeader>
                 <IonCardTitle>Showcase: Indigo Rooms</IonCardTitle>
@@ -106,7 +106,7 @@ const Home: React.FC = () => (
           <IonCol size="12" sizeMd="4">
             <IonCard className="news-card">
               <div className="news-img-wrap">
-                <img src="src/data/tracks-cover/t11.jpg" alt="Jazz Fusion" className="news-img" />
+                <img src="tracks-cover/t11.jpg" alt="Jazz Fusion" className="news-img" />
               </div>
               <IonCardHeader>
                 <IonCardTitle>Release: Blue Smoke</IonCardTitle>
@@ -124,7 +124,7 @@ const Home: React.FC = () => (
           <IonCol size="12" sizeMd="4">
             <IonCard className="news-card">
               <div className="news-img-wrap">
-                <img src="src/data/tracks-cover/t19.jpg" alt="Rap Mixtape" className="news-img" />
+                <img src="tracks-cover/t19.jpg" alt="Rap Mixtape" className="news-img" />
               </div>
               <IonCardHeader>
                 <IonCardTitle>Mixtape: Eastline Echoes</IonCardTitle>
@@ -139,7 +139,7 @@ const Home: React.FC = () => (
           <IonCol size="12" sizeMd="4">
             <IonCard className="news-card">
               <div className="news-img-wrap">
-                <img src="src/data/tracks-cover/t23.jpg" alt="Live Performance" className="news-img" />
+                <img src="tracks-cover/t23.jpg" alt="Live Performance" className="news-img" />
               </div>
               <IonCardHeader>
                 <IonCardTitle>Event: Hip-Hop Night - Low End Lanterns</IonCardTitle>
@@ -154,7 +154,7 @@ const Home: React.FC = () => (
           <IonCol size="12" sizeMd="4">
             <IonCard className="news-card">
               <div className="news-img-wrap">
-                <img src="src/data/tracks-cover/t24.jpg" alt="R&B Release" className="news-img" />
+                <img src="tracks-cover/t24.jpg" alt="R&B Release" className="news-img" />
               </div>
               <IonCardHeader>
                 <IonCardTitle>Release: Sugar Radio</IonCardTitle>

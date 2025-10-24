@@ -5,7 +5,7 @@
     "artist": "Midnight Syntax",
     "album": "Urban Relics",
     "genre": "Hip-Hop",
-    "cover": "src/data/tracks-cover/t2.jpg",
+    "cover": "tracks-cover/t2.jpg",
     "releaseDate": "2023-05-15",
     "tracks": [
       { "n": 1, "title": "Backseat Scriptures", "duration": "3:22" },
@@ -22,7 +22,7 @@
     "artist": "The Indigo Notes",
     "album": "Golden Hour Tapes",
     "genre": "Soul",
-    "cover": "src/data/tracks-cover/t1.jpg",
+    "cover": "tracks-cover/t1.jpg",
     "releaseDate": "2023-08-20",
     "tracks": [
       { "n": 1, "title": "Velvet Avenue", "duration": "3:15" },
@@ -39,7 +39,7 @@
     "artist": "Velvet Motion",
     "album": "Soft Electric",
     "genre": "R&B",
-    "cover": "src/data/tracks-cover/t3.jpg",
+    "cover": "tracks-cover/t3.jpg",
     "releaseDate": "2023-06-10",
     "tracks": [
       { "n": 1, "title": "Honeyline", "duration": "3:20" },
@@ -56,7 +56,7 @@
     "artist": "The Groove Parliament",
     "album": "Late Hour Stories",
     "genre": "Jazz",
-    "cover": "src/data/tracks-cover/t4.jpg",
+    "cover": "tracks-cover/t4.jpg",
     "releaseDate": "2023-09-05",
     "tracks": [
       { "n": 1, "title": "Late Hour Swing", "duration": "4:00" },
@@ -73,7 +73,7 @@
     "artist": "Dub Assembly",
     "album": "Island Static",
     "genre": "Soul",
-    "cover": "src/data/tracks-cover/t5.jpg",
+    "cover": "/tracks-cover/t5.jpg",
     "releaseDate": "2023-07-12",
     "tracks": [
       { "n": 1, "title": "Roots Mosaic", "duration": "3:30" },
@@ -90,7 +90,7 @@
     "artist": "Ivy & Jade",
     "album": "Velvet Skyline",
     "genre": "R&B",
-    "cover": "src/data/tracks-cover/t6.jpg",
+    "cover": "/tracks-cover/t6.jpg",
     "releaseDate": "2023-10-18",
     "tracks": [
       { "n": 1, "title": "Satin Skyline", "duration": "3:25" },
@@ -107,7 +107,7 @@
     "artist": "Brick & Verse",
     "album": "Concrete Poetry",
     "genre": "Hip-Hop",
-    "cover": "src/data/tracks-cover/t7.jpg",
+    "cover": "/tracks-cover/t7.jpg",
     "releaseDate": "2023-11-22",
     "tracks": [
       { "n": 1, "title": "Concrete Verses", "duration": "3:35" },
@@ -124,7 +124,7 @@
     "artist": "Warm Colours",
     "album": "Indigo Rooms",
     "genre": "Soul",
-    "cover": "src/data/tracks-cover/t8.jpg",
+    "cover": "/tracks-cover/t8.jpg",
     "releaseDate": "2023-12-08",
     "tracks": [
       { "n": 1, "title": "Indigo Rooms", "duration": "3:40" },
@@ -141,7 +141,7 @@
     "artist": "Blue Velvet Club",
     "album": "Night Drive Letters",
     "genre": "R&B",
-    "cover": "src/data/tracks-cover/t9.jpg",
+    "cover": "/tracks-cover/t9.jpg",
     "releaseDate": "2024-01-14",
     "tracks": [
       { "n": 1, "title": "Night Letter", "duration": "3:30" },
@@ -158,7 +158,7 @@
     "artist": "Lo-Keys Union",
     "album": "Basement Scriptures",
     "genre": "Hip-Hop",
-    "cover": "src/data/tracks-cover/t10.jpg",
+    "cover": "/tracks-cover/t10.jpg",
     "releaseDate": "2024-02-19",
     "tracks": [
       { "n": 1, "title": "Basement Scriptures", "duration": "3:25" },
@@ -175,7 +175,7 @@
     "artist": "Indigo Quintet",
     "album": "Blue Smoke",
     "genre": "Jazz",
-    "cover": "src/data/tracks-cover/t11.jpg",
+    "cover": "/tracks-cover/t11.jpg",
     "releaseDate": "2024-03-25",
     "tracks": [
       { "n": 1, "title": "Blue Smoke", "duration": "4:00" },
@@ -192,7 +192,7 @@
     "artist": "Moonlit Rooms",
     "album": "Honey & Chrome",
     "genre": "R&B",
-    "cover": "src/data/tracks-cover/t12.jpg",
+    "cover": "/tracks-cover/t12.jpg",
     "releaseDate": "2024-04-30",
     "tracks": [
       { "n": 1, "title": "Honey & Chrome", "duration": "3:35" },
@@ -209,7 +209,7 @@
     "artist": "Back Alley Scholars",
     "album": "Street Sermons",
     "genre": "Hip-Hop",
-    "cover": "src/data/tracks-cover/t13.jpg",
+    "cover": "/tracks-cover/t13.jpg",
     "releaseDate": "2024-05-10",
     "tracks": [
       { "n": 1, "title": "Street Sermons", "duration": "3:40" },
@@ -226,7 +226,7 @@
     "artist": "Velvet Avenue",
     "album": "Satin & Stone",
     "genre": "Soul",
-    "cover": "src/data/tracks-cover/t14.jpg",
+    "cover": "/tracks-cover/t14.jpg",
     "releaseDate": "2024-06-15",
     "tracks": [
       { "n": 1, "title": "Satin & Stone", "duration": "3:30" },
@@ -243,7 +243,7 @@
     "artist": "Echo & Eden",
     "album": "Afterglow Motel",
     "genre": "R&B",
-    "cover": "src/data/tracks-cover/t15.jpg",
+    "cover": "/tracks-cover/t15.jpg",
     "releaseDate": "2024-07-20",
     "tracks": [
       { "n": 1, "title": "Afterglow Motel", "duration": "3:25" },
@@ -260,7 +260,7 @@
     "artist": "Baseline Trio",
     "album": "Needle & Dust",
     "genre": "Jazz",
-    "cover": "src/data/tracks-cover/t16.jpg",
+    "cover": "/tracks-cover/t16.jpg",
     "releaseDate": "2024-08-25",
     "tracks": [
       { "n": 1, "title": "Needle & Dust", "duration": "4:00" },
@@ -277,7 +277,7 @@
     "artist": "Metro Cipher",
     "album": "Rooftop Rituals",
     "genre": "Hip-Hop",
-    "cover": "src/data/tracks-cover/t17.jpg",
+    "cover": "/tracks-cover/t17.jpg",
     "releaseDate": "2024-09-30",
     "tracks": [
       { "n": 1, "title": "Rooftop Rituals", "duration": "3:35" },
@@ -294,7 +294,7 @@
     "artist": "Soul Assembly",
     "album": "Quiet Fire",
     "genre": "Soul",
-    "cover": "src/data/tracks-cover/t18.jpg",
+    "cover": "/tracks-cover/t18.jpg",
     "releaseDate": "2024-10-05",
     "tracks": [
       { "n": 1, "title": "Quiet Fire", "duration": "3:40" },
@@ -311,7 +311,7 @@
     "artist": "Eastline Flow",
     "album": "Eastline Echoes",
     "genre": "Hip-Hop",
-    "cover": "src/data/tracks-cover/t19.jpg",
+    "cover": "/tracks-cover/t19.jpg",
     "releaseDate": "2024-11-10",
     "tracks": [
       { "n": 1, "title": "Signal from Eastline", "duration": "3:30" },
@@ -328,7 +328,7 @@
     "artist": "The Amberettes",
     "album": "Velvet Garden",
     "genre": "Soul",
-    "cover": "src/data/tracks-cover/t20.jpg",
+    "cover": "/tracks-cover/t20.jpg",
     "releaseDate": "2024-12-15",
     "tracks": [
       { "n": 1, "title": "Velvet Garden", "duration": "3:25" },
@@ -345,7 +345,7 @@
     "artist": "Skyline Desire",
     "album": "Silver District",
     "genre": "R&B",
-    "cover": "src/data/tracks-cover/t21.jpg",
+    "cover": "/tracks-cover/t21.jpg",
     "releaseDate": "2025-01-20",
     "tracks": [
       { "n": 1, "title": "Silver District", "duration": "3:35" },
@@ -362,7 +362,7 @@
     "artist": "Copper Lanterns",
     "album": "Copper & Ink",
     "genre": "Jazz",
-    "cover": "src/data/tracks-cover/t22.jpg",
+    "cover": "/tracks-cover/t22.jpg",
     "releaseDate": "2025-02-25",
     "tracks": [
       { "n": 1, "title": "Copper Lanterns", "duration": "4:00" },
@@ -379,7 +379,7 @@
     "artist": "Vinyl Committee",
     "album": "Low End Lanterns",
     "genre": "Hip-Hop",
-    "cover": "src/data/tracks-cover/t23.jpg",
+    "cover": "/tracks-cover/t23.jpg",
     "releaseDate": "2025-03-30",
     "tracks": [
       { "n": 1, "title": "Low End Lanterns", "duration": "3:40" },
@@ -396,7 +396,7 @@
     "artist": "Soft Tempo",
     "album": "Sugar Radio",
     "genre": "R&B",
-    "cover": "src/data/tracks-cover/t24.jpg",
+    "cover": "/tracks-cover/t24.jpg",
     "releaseDate": "2025-04-05",
     "tracks": [
       { "n": 1, "title": "Sugar Radio", "duration": "3:30" },
@@ -413,7 +413,7 @@
     "artist": "Roots Parlor",
     "album": "River Dub Diaries",
     "genre": "Jazz",
-    "cover": "src/data/tracks-cover/t25.jpg",
+    "cover": "/tracks-cover/t25.jpg",
     "releaseDate": "2025-05-10",
     "tracks": [
       { "n": 1, "title": "River Dub Diaries", "duration": "3:25" },
@@ -430,7 +430,7 @@
     "artist": "Golden Choir",
     "album": "Bronze & Bloom",
     "genre": "Soul",
-    "cover": "src/data/tracks-cover/t26.jpg",
+    "cover": "/tracks-cover/t26.jpg",
     "releaseDate": "2025-06-15",
     "tracks": [
       { "n": 1, "title": "Bronze & Bloom", "duration": "3:35" },
@@ -447,7 +447,7 @@
     "artist": "Static Poets",
     "album": "Tapehead Poetry",
     "genre": "Hip-Hop",
-    "cover": "src/data/tracks-cover/t27.jpg",
+    "cover": "/tracks-cover/t27.jpg",
     "releaseDate": "2025-07-20",
     "tracks": [
       { "n": 1, "title": "Tapehead Poetry", "duration": "3:40" },
@@ -464,7 +464,7 @@
     "artist": "Satin Theory",
     "album": "Indigo Polaroids",
     "genre": "R&B",
-    "cover": "src/data/tracks-cover/t28.jpg",
+    "cover": "/tracks-cover/t28.jpg",
     "releaseDate": "2025-08-25",
     "tracks": [
       { "n": 1, "title": "Indigo Polaroids", "duration": "3:30" },
@@ -481,7 +481,7 @@
     "artist": "Night Brass",
     "album": "Smoke Signals",
     "genre": "Jazz",
-    "cover": "src/data/tracks-cover/t29.jpg",
+    "cover": "/tracks-cover/t29.jpg",
     "releaseDate": "2025-09-30",
     "tracks": [
       { "n": 1, "title": "Smoke Signals", "duration": "4:00" },
@@ -498,7 +498,7 @@
     "artist": "Harbor Dreads",
     "album": "Harbor Skank",
     "genre": "R&B",
-    "cover": "src/data/tracks-cover/t30.jpg",
+    "cover": "/tracks-cover/t30.jpg",
     "releaseDate": "2025-10-05",
     "tracks": [
       { "n": 1, "title": "Harbor Skank", "duration": "3:25" },
