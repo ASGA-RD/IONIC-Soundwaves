@@ -27,13 +27,13 @@ const Home: React.FC = () => {
 
         {/* nav buttons */}
         <IonRow className="top-nav-row">
-          <IonCol size="4" sizeMd="2">
+          <IonCol size="6" sizeMd="3">
             <IonButton expand="block" routerLink="/tracks">Tracks</IonButton>
           </IonCol>
-          <IonCol size="4" sizeMd="2">
+          <IonCol size="6" sizeMd="3">
             <IonButton expand="block" routerLink="/albums">Albums</IonButton>
           </IonCol>
-          <IonCol size="4" sizeMd="0">
+          <IonCol size="6" sizeMd="0">
             <IonButton fill="clear" expand="block" className="info-btn" onClick={() => setShowModal(true)}>
               <IonIcon slot="icon-only" icon={informationCircleOutline}></IonIcon>
             </IonButton>
