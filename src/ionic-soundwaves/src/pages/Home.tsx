@@ -1,8 +1,12 @@
-import React from 'react';
-import {IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonCol, IonButton, IonCard, IonCardHeader, IonCardTitle, IonCardContent,} from '@ionic/react';
+import React, { useState } from 'react';
+import {IonPage, IonHeader, IonIcon, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonCol, IonButton, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonModal} from '@ionic/react';
 import './Home.css';
+import { informationCircleOutline, logoYoutube, logoInstagram, logoSoundcloud, logoTwitter } from 'ionicons/icons'; // icone
 
-const Home: React.FC = () => (
+const Home: React.FC = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  return (
   <IonPage>
     {/* ------ header ------ */}
     <IonHeader translucent>
@@ -23,13 +27,52 @@ const Home: React.FC = () => (
 
         {/* nav buttons */}
         <IonRow className="top-nav-row">
-          <IonCol size="6" sizeMd="3">
+          <IonCol size="4" sizeMd="2">
             <IonButton expand="block" routerLink="/tracks">Tracks</IonButton>
           </IonCol>
-          <IonCol size="6" sizeMd="3">
+          <IonCol size="4" sizeMd="2">
             <IonButton expand="block" routerLink="/albums">Albums</IonButton>
           </IonCol>
+          <IonCol size="4" sizeMd="0">
+            <IonButton fill="clear" expand="block" className="info-btn" onClick={() => setShowModal(true)}>
+              <IonIcon slot="icon-only" icon={informationCircleOutline}></IonIcon>
+            </IonButton>
+          </IonCol>
         </IonRow>
+
+        {/* Info Modal */}
+    <IonModal className="info-modal" isOpen={showModal} onDidDismiss={() => setShowModal(false)}>
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>About Ionic Soundwaves</IonTitle>
+          <IonButton slot="end" fill="clear" onClick={() => setShowModal(false)}>Close</IonButton>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent className="ion-padding">
+        <IonRow>
+          <IonCol size="12" sizeMd="4">
+            <img src="/team.jfif" alt="Ionic Soundwaves Team" className="modal-team-cover" />
+          </IonCol>
+          <IonCol>
+            <p>Ionic Soundwaves was founded in 1993 with a passion for underground music. Our mission is to promote soulful and hip-hop artists from around the world, providing a platform for emerging talents to share their stories through beats and lyrics.</p>
+            <p>Over the years, we've grown from a small local label to a recognized name in the industry, collaborating with artists around the world. We believe in the power of music to connect people and inspire change.</p>
+            <p>Thank you for being part of our journey. Stay tuned for more releases and events!</p>
+            <IonButton onClick={() => window.open('https://www.instagram.com', '_blank')}>
+              <IonIcon slot="icon-only" icon={logoInstagram}></IonIcon>
+            </IonButton>
+            <IonButton onClick={() => window.open('https://www.youtube.com', '_blank')}>
+              <IonIcon slot="icon-only" icon={logoYoutube}></IonIcon>
+            </IonButton>
+            <IonButton onClick={() => window.open('https://soundcloud.com', '_blank')}>
+              <IonIcon slot="icon-only" icon={logoSoundcloud}></IonIcon>
+            </IonButton>
+            <IonButton onClick={() => window.open('https://twitter.com', '_blank')}>
+              <IonIcon slot="icon-only" icon={logoTwitter}></IonIcon>
+            </IonButton>
+          </IonCol>
+        </IonRow>
+      </IonContent>
+    </IonModal>
 
         {/* title */}
         <div className="main-title">
@@ -170,5 +213,5 @@ const Home: React.FC = () => (
     </IonContent>
   </IonPage>
 );
-
+}
 export default Home;
