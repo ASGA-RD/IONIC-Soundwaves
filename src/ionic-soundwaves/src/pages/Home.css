@@ -51,6 +51,23 @@
   padding-top: 12px;
 }
 
+/* info button */
+.info-btn {
+  margin-left: 0px;
+}
+
+.info-modal {    
+    --height: 44% !important;
+    --width: 50% !important;
+    border-radius: 25px;
+ }
+
+.modal-team-cover {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
 /* main */
 .main-title {
   font-size: 1.3em;
