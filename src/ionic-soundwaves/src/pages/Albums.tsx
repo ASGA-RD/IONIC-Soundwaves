@@ -2,10 +2,11 @@ import { Swiper, SwiperSlide } from "swiper/react"; // dependência swiper - sli
 import "swiper/css";
 
 import React, { useState, useMemo, useEffect } from 'react';
-import {IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonCol, IonButton, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonModal, IonList, IonItem, IonLabel} from '@ionic/react';
+import {IonPage, IonIcon, IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonCol, IonButton, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonModal, IonList, IonItem, IonLabel} from '@ionic/react';
 import { useLocation } from 'react-router-dom'; //navigate to album , hook para path
 import './Albums.css';
 import albumsData from "../data/albums.json";
+import {logoSoundcloud } from 'ionicons/icons'; // icone
 
 interface Album {
   id: string;
@@ -142,10 +143,16 @@ const Albums: React.FC = () => {
                     <img src={selectedAlbum.cover} alt={selectedAlbum.title} className="modal-album-cover" />
                   </IonCol>
                   <IonCol className="modal-album-info" size="12" sizeMd="8">
-                    <h3 className="modal-h3">{selectedAlbum.title}</h3>
+                    <h3 className="modal-h3">{selectedAlbum.title}
+                      <IonButton className="soundcloud-btn" fill="clear" onClick={() => window.open(`https://soundcloud.com/search?q=${selectedAlbum.album}`, '_blank')}>
+                        <IonIcon slot="icon-only" icon={logoSoundcloud}></IonIcon>
+                      </IonButton>
+                    </h3>
+                    <div className="modal-cont">
                     <p className="modal-p"><strong>Artist:</strong> {selectedAlbum.artist}</p>
                     <p className="modal-p"><strong>Genre:</strong> {selectedAlbum.genre}</p>
                     <p className="modal-p"><strong>Release Date:</strong> {selectedAlbum.releaseDate}</p>
+                    </div>
                   </IonCol>
                 </IonRow>
                 <IonRow>

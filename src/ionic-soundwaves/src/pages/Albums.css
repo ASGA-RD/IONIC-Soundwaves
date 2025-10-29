@@ -105,6 +105,14 @@
   font-size: 1.2em !important;
 }
 
+.soundcloud-btn {
+  margin-bottom: 17px;
+}
+
+.modal-cont {
+  margin-top: -20px;
+}
+
 /* genre title */
 .genre-title {
   font-size: 1.1em;
