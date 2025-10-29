@@ -180,3 +180,5 @@ const Albums: React.FC = () => {
 };
 
 export default Albums;
+
+/* project By Guilherme Andrade - A045395 */

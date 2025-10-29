@@ -215,3 +215,5 @@ const Home: React.FC = () => {
 );
 }
 export default Home;
+
+/* project By Guilherme Andrade - A045395 */
