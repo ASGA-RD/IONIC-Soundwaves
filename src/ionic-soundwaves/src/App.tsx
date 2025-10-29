@@ -62,3 +62,7 @@ const App: React.FC = () => (
 );
 
 export default App;
+
+
+
+/* project By Guilherme Andrade - A045395 */
