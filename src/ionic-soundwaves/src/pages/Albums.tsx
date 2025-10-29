@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react"; // dependência swiper - sli
 import "swiper/css";
 
 import React, { useState, useMemo, useEffect } from 'react';
-import {IonPage, IonIcon, IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonCol, IonButton, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonModal, IonList, IonItem, IonLabel} from '@ionic/react';
+import {IonPage, IonIcon, IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonCol, IonButton, IonModal, IonList, IonItem, IonLabel} from '@ionic/react';
 import { useLocation } from 'react-router-dom'; //navigate to album , hook para path
 import './Albums.css';
 import albumsData from "../data/albums.json";
