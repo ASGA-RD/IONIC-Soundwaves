@@ -1,56 +1,10 @@
-import React, { useRef, useState } from 'react';
-import {IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonSearchbar, IonList, IonItem, IonLabel, IonAvatar, IonRow, IonCol, IonFab, IonFabButton, IonIcon, IonModal, IonCheckbox, IonButtons} from '@ionic/react';
-import { chevronUpOutline, filterOutline } from 'ionicons/icons'; // icones, respetivamente, back to top & filtro
-import { useHistory } from 'react-router-dom'; //navigate to album , dependência
+import React, { useState } from 'react';
+import {IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonSearchbar, IonList, IonItem, IonLabel, IonAvatar, IonRow, IonCol, IonIcon, IonModal, IonCheckbox, IonButtons} from '@ionic/react';
+import { filterOutline } from 'ionicons/icons'; // icones, respetivamente, back to top & filtro
 import './Tracks.css';
-import tracksData from '../data/tracks.json';
-import albumsData from '../data/albums.json';
-
-const SCROLL_THRESHOLD = 350; // mostrar fab back top button
 
 const Tracks: React.FC = () => {
-  const history = useHistory(); // history data para fazer ligação com album
-  const [query, setQuery] = useState('');
-  const [showBackToTop, setShowBackToTop] = useState(false); // estado de uso do botão de back to top
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false); // estado de uso do modal de filtros
-  const [selectedGenres, setSelectedGenres] = useState<string[]>([]);
-  const contentRef = useRef<HTMLIonContentElement>(null);
-
-  const uniqueGenres = ['Hip-Hop', 'Soul', 'R&B', 'Jazz'];
-
-  const toggleGenre = (genre: string) => {
-    setSelectedGenres(prev =>
-      prev.includes(genre) ? prev.filter(g => g !== genre) : [...prev, genre]
-    );
-  };
-
-  // filtro resultados search
-  const filtered = tracksData.filter((t) => {
-    const matchesSearch = [t.title, t.artist, t.genre, t.album].some((v) =>
-      v.toLowerCase().includes(query.toLowerCase())
-    );
-    const matchesGenre = selectedGenres.length === 0 || selectedGenres.includes(t.genre);
-    return matchesSearch && matchesGenre;
-  });
-
-  // fab back top, esconder e mostrar
-  const handleScroll = (e: CustomEvent) => {
-    const top = (e as any).detail?.scrollTop ?? 0;
-    setShowBackToTop(top > SCROLL_THRESHOLD);
-  };
-
-  // scroll top anm
-  const scrollToTop = () => {
-    contentRef.current?.scrollToTop(500);
-  };
-
-  // navigate to album modal
-  const navigateToAlbum = (albumTitle: string) => {
-    const album = albumsData.find(a => a.title === albumTitle);
-    if (album) {
-      history.push(`/albums?album=${album.id}`);
-    }
-  };
 
   return (
     <IonPage>
@@ -65,7 +19,7 @@ const Tracks: React.FC = () => {
       </IonHeader>
 
       {/* ------ main ------ */}
-      <IonContent ref={contentRef} fullscreen scrollEvents={true} onIonScroll={handleScroll}>
+      <IonContent>
         <div className="slogan">
           <p>underground • soul • hip-hop</p>
         </div>
@@ -98,19 +52,29 @@ const Tracks: React.FC = () => {
             <IonToolbar>
               <IonTitle className="filter-title">Filter by Genre</IonTitle>
               <IonButtons slot="end">
-                <IonButton onClick={() => { setSelectedGenres([/* vazio */]); setIsFilterModalOpen(false); }}>Clear</IonButton>
-                <IonButton onClick={() => setIsFilterModalOpen(false)}>Apply</IonButton>
+                <IonButton>Clear</IonButton>
+                <IonButton>Apply</IonButton>
               </IonButtons>
             </IonToolbar>
           </IonHeader>
           <IonContent>
             <IonList>
-              {uniqueGenres.map((genre) => (
-                <IonItem key={genre}>
-                  <IonLabel>{genre}</IonLabel>
-                  <IonCheckbox slot="end" checked={selectedGenres.includes(genre)} onIonChange={() => toggleGenre(genre)} />
+                <IonItem>
+                  <IonLabel> Hip-Hop </IonLabel>
+                  <IonCheckbox/>
                 </IonItem>
-              ))}
+                <IonItem>
+                  <IonLabel> Soul</IonLabel>
+                  <IonCheckbox/>
+                </IonItem> 
+                <IonItem>
+                  <IonLabel> Jazz </IonLabel>
+                  <IonCheckbox/>
+                </IonItem> 
+                <IonItem>
+                  <IonLabel> R&B </IonLabel>
+                  <IonCheckbox/>
+                </IonItem> 
             </IonList>
           </IonContent>
         </IonModal>
@@ -118,40 +82,70 @@ const Tracks: React.FC = () => {
         {/* search */}
         <div className="search search-box">
           <IonSearchbar
-            placeholder="Search by title, artist or album"
-            value={query}
-            debounce={150}
-            onIonInput={(e) => setQuery(e.detail.value!)}
-          />
+            placeholder="Search by title, artist or album"/>
         </div>
 
         {/* list */}
         <IonList inset>
-          {filtered.map((t) => (
-            <IonItem key={t.id} button onClick={() => navigateToAlbum(t.album)}>
+            <IonItem>
               <IonAvatar slot="start">
-                <img src={t.cover} alt={t.title} />
+                <img src="/tracks-cover/t2.jpg" alt="t1" />
               </IonAvatar>
               <IonLabel>
-                <h2>{t.title} | {t.album} </h2>
-                <p>{t.artist} — {t.genre}</p>
+                <h2>Backseat Scriptures | Urban Relics </h2>
+                <p>Midnight Syntax — Hip-Hop</p>
               </IonLabel>
             </IonItem>
-          ))}
-
-          {filtered.length === 0 && (
             <IonItem>
-              <IonLabel>No tracks found.</IonLabel>
+              <IonAvatar slot="start">
+                <img src="/tracks-cover/t1.jpg" alt="t1" />
+              </IonAvatar>
+              <IonLabel>
+                <h2>Velvet Avenue | Golden Hour Tapes </h2>
+                <p>The Indigo Notes — Soul</p>
+              </IonLabel>
             </IonItem>
-          )}
-        </IonList>
 
-        {/* fab back top */}
-        <IonFab slot="fixed" vertical="bottom" horizontal="end" className={`back-to-top ${showBackToTop ? 'show' : ''}`}>
-          <IonFabButton aria-label="Back to top" onClick={scrollToTop}>
-            <IonIcon icon={chevronUpOutline} />
-          </IonFabButton>
-        </IonFab>
+            <IonItem>
+              <IonAvatar slot="start">
+                <img src="/tracks-cover/t3.jpg" alt="t1" />
+              </IonAvatar>
+              <IonLabel>
+                <h2>Honeyline | Soft Electric </h2>
+                <p>Velvet Motion — R&B</p>
+              </IonLabel>
+            </IonItem>
+
+            <IonItem>
+              <IonAvatar slot="start">
+                <img src="/tracks-cover/t4.jpg" alt="t1" />
+              </IonAvatar>
+              <IonLabel>
+                <h2>Late Hour Swing | Late Hour Stories </h2>
+                <p>The Groove Parliament — Jazz</p>
+              </IonLabel>
+            </IonItem>
+
+            <IonItem>
+              <IonAvatar slot="start">
+                <img src="/tracks-cover/t5.jpg" alt="t1" />
+              </IonAvatar>
+              <IonLabel>
+                <h2>Roots Mosaic | Island Static </h2>
+                <p>Dub Assembly — Soul</p>
+              </IonLabel>
+            </IonItem>
+
+            <IonItem>
+              <IonAvatar slot="start">
+                <img src="/tracks-cover/t6.jpg" alt="t1" />
+              </IonAvatar>
+              <IonLabel>
+                <h2>Satin Skyline | Velvet Skyline </h2>
+                <p>Ivy & Jade — R&B</p>
+              </IonLabel>
+            </IonItem>
+        </IonList>
 
       </IonContent>
     </IonPage>
