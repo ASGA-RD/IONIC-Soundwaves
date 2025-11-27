@@ -29,8 +29,9 @@ export class SpotifyService {
     }).then((res) => res.data);
   }
 
-//helper
-//devolve as tracks com albumName, albumImages e genres
+  //------------------------------------------------------------------------------------------
+  //helper
+  //devolve as tracks com albumName, albumImages e genres
   async getTracksWithGenres(albumIds: string): Promise<any[]> {
     const data = await this.getAlbums(albumIds);
     const albums = data.albums || [];

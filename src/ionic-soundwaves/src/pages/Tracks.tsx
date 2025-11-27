@@ -117,8 +117,7 @@ const Tracks: React.FC = () => {
             value={search}
             debounce={300}
             onIonChange={(e) => setSearch(e.detail.value || '')}
-            placeholder="Search by title, artist or album"
-          />
+            placeholder="Search by title, artist or album"/>
         </div>
 
         {/* list */}
@@ -138,8 +137,7 @@ const Tracks: React.FC = () => {
 
               {track.preview_url && (<IonButton slot="end" onClick={() => window.open(track.preview_url, '_blank')}>
                   Preview
-                </IonButton>
-              )}
+                </IonButton>)}
             </IonItem>
           ))}
         </IonList>
