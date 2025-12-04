@@ -88,36 +88,6 @@ const Tracks: React.FC = () => {
           <h2 className="main-title">Tracks</h2>
         </div>
 
-        {/* filter but */}
-        <div className="filter-section">
-          <IonButton fill="clear" onClick={() => setIsFilterModalOpen(true)}>
-            <IonIcon slot="icon-only" icon={filterOutline} />
-          </IonButton>
-        </div>
-
-        {/* filter modal */}
-        <IonModal
-          className="filter-modal"
-          isOpen={isFilterModalOpen}
-          onDidDismiss={() => setIsFilterModalOpen(false)}>
-
-          <IonHeader>
-            <IonToolbar>
-              <IonTitle className="filter-title">Filter by Artist</IonTitle>
-            </IonToolbar>
-          </IonHeader>
-          <IonContent>
-            <IonList>
-              {availableArtists.map((artist) => (
-                <IonItem key={artist}>
-                  <IonLabel>{artist}</IonLabel>
-                  <IonCheckbox />
-                </IonItem>
-              ))}
-            </IonList>
-          </IonContent>
-        </IonModal>
-
         {/* search */}
         <div className="search search-box">
           <IonSearchbar
