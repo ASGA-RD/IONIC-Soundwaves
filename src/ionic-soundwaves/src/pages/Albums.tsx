@@ -4,10 +4,9 @@ import "swiper/css";
 import React, { useState, useMemo, useEffect } from 'react';
 import {IonPage, IonIcon, IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonCol, IonButton, IonModal, IonList, IonItem, IonLabel} from '@ionic/react';
 import './Albums.css';
-import {logoSoundcloud } from 'ionicons/icons'; // icone
 import { SpotifyService } from '../services/spotify.service';
 
-const albumIds = '0hvT3yIEysuuvkK73vgdcW,7lc43Wd0bsY6agW6UIbDH2,18XFe4CPBgVezXkxZP6rTb';
+const albumIds = '7h5xn0Olvx2p0eQcSt1Osy,2Lq2qX3hYhiuPckC8Flj21,6jZ1z25PyF4Yd3kHxt9rl1,0hvT3yIEysuuvkK73vgdcW,4eLPsYPBmXABThSJ821sqY,50YNY0xy9uJ0U9eFQBdLJa,7vfuTRXIAYJz5Uc8SddnTr,0ks45m1bsP2JsZpM5D2FFA,79ONNoS4M9tfIA1mYLBYVX,748dZDqSZy6aPXKcI9H80u,1aGapZGHBovnmhwqVNI6JZ,3Pi6o8NqDPlEBilGeMKi8q';
 
 const Albums: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false); // estado de uso do modal dos albums
@@ -33,7 +32,7 @@ const Albums: React.FC = () => {
     const groups: Record<string, any[]> = {};
 
     albums.forEach((album: any) => {
-      const artistName = album.artists?.[0]?.name || 'Unknown Artist';
+      const artistName = album.artists?.[0]?.name || 'Unknown';
       if (!groups[artistName]) {
         groups[artistName] = [];
       }
@@ -89,13 +88,13 @@ const Albums: React.FC = () => {
             <h2 className="main-title">Albums</h2>
           </div>
 
-          {/* sections: 1 row por artista */}
+          {/* 1 row por artista */}
           {Object.entries(albumsByArtist).map(([artistName, artistAlbums]) => (
               <IonRow key={artistName}>
                 <IonCol size="12">
                   <h3 className="genre-title genre-box">{artistName}</h3>
 
-                  <Swiper spaceBetween={100} slidesPerView={5} loop={true}>
+                  <Swiper spaceBetween={100} slidesPerView={4} loop={false}>
                     {(artistAlbums as any[]).map((album) => ( 
                       <SwiperSlide key={album.id}>
                         <div className="album-slide" onClick={() => handleOpenAlbumModal(album)}>
@@ -130,14 +129,15 @@ const Albums: React.FC = () => {
                   </IonCol>
 
                   <IonCol className="modal-album-info" size="12" sizeMd="8">
-                    <h3 className="modal-h3">
-                      {selectedAlbum.name}
-                    </h3>
+                    <h3 className="modal-h3"> {selectedAlbum.name} </h3>
 
                     <div className="modal-cont">
                       <p className="modal-p"> Artist:{' '} {selectedAlbum.artists?.[0]?.name || 'Unknown'} </p>
                       <p className="modal-p"> Release Date:{' '} {selectedAlbum.release_date || 'Unknown'} </p>
-                      <p className="modal-p"> Type:{' '} {selectedAlbum.type || 'Unknown'} </p>
+                    </div>
+
+                    <div>
+                      <IonButton size="small" fill="outline" expand="block" slot="icon-only" onClick={() => window.open(selectedAlbum?.external_urls.spotify, '_blank') }> ᯤSpotify </IonButton>
                     </div>
                   </IonCol>
                 </IonRow>

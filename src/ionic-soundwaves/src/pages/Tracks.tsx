@@ -4,7 +4,7 @@ import { filterOutline } from 'ionicons/icons';
 import './Tracks.css';
 import { SpotifyService } from '../services/spotify.service';
 
-const albumIds = '0hvT3yIEysuuvkK73vgdcW,7lc43Wd0bsY6agW6UIbDH2,18XFe4CPBgVezXkxZP6rTb';
+const albumIds = '7h5xn0Olvx2p0eQcSt1Osy,2Lq2qX3hYhiuPckC8Flj21,6jZ1z25PyF4Yd3kHxt9rl1,0hvT3yIEysuuvkK73vgdcW,4eLPsYPBmXABThSJ821sqY,50YNY0xy9uJ0U9eFQBdLJa,7vfuTRXIAYJz5Uc8SddnTr,0ks45m1bsP2JsZpM5D2FFA,79ONNoS4M9tfIA1mYLBYVX,748dZDqSZy6aPXKcI9H80u,1aGapZGHBovnmhwqVNI6JZ,3Pi6o8NqDPlEBilGeMKi8q';
 
 const Tracks: React.FC = () => {
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
@@ -24,7 +24,7 @@ const Tracks: React.FC = () => {
     const artistNames = Array.from(
       new Set(
         data
-        .map((track: any) => track.artists?.[0]?.name)
+        .map((track: any) => track.albumArtists?.[0]?.name)
         .filter((name: string | undefined): name is string => !!name)
       )
     );
@@ -42,7 +42,7 @@ const Tracks: React.FC = () => {
   const term = search.toLowerCase().trim();
   const filteredTracks = term
     ? tracks.filter((track: any) => {
-        const mainArtist = track.artists?.[0]?.name || '';
+        const mainArtist = track.albumArtists?.[0]?.name || '';
         const nameMatch = track.name.toLowerCase().includes(term);
         const albumMatch =
           track.albumName && track.albumName.toLowerCase().includes(term);
@@ -50,8 +50,8 @@ const Tracks: React.FC = () => {
         return nameMatch || albumMatch || artistMatch;
       })
     : []; // tracks
-
   return (
+    
     <IonPage>
       {/* ------ Header ------ */}
       <IonHeader translucent>

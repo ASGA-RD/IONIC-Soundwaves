@@ -41,6 +41,7 @@ export class SpotifyService {
         ...t,
         albumName: album.name,
         albumImages: album.images,
+        albumArtists: album.artists,
       }))
     );
 
@@ -72,3 +73,5 @@ export class SpotifyService {
     });
   }
 }
+
+/* project By Guilherme Andrade - A045395 */
