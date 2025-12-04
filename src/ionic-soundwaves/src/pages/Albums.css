@@ -102,7 +102,7 @@
 }
 
 .modal-tracks {
-  font-size: 1.2em !important;
+  font-size: 1em !important;
 }
 
 .soundcloud-btn {
@@ -110,7 +110,7 @@
 }
 
 .modal-cont {
-  margin-top: -20px;
+  margin-top: 0px;
 }
 
 /* genre title */

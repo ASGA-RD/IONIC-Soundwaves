@@ -10,31 +10,46 @@ const Tracks: React.FC = () => {
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
   const [tracks, setTracks] = useState<any[]>([]);
   const [search, setSearch] = useState('');
-
+  const [availableArtists, setAvailableArtists] = useState<string[]>([]);
+  
   // tracks + géneros
   useEffect(() => {
     const s = new SpotifyService();
+
     s.getTracksWithGenres(albumIds)
-      .then(setTracks)
-      .catch((err) => {
-        console.error(err);
-        setTracks([]);
-      });
-  }, []);
+      .then((data) => {
+        setTracks(data);
+
+  // artistas principal = main
+    const artistNames = Array.from(
+      new Set(
+        data
+        .map((track: any) => track.artists?.[0]?.name)
+        .filter((name: string | undefined): name is string => !!name)
+      )
+    );
+    
+    setAvailableArtists(artistNames);
+  })
+  .catch((err) => {
+    console.error(err);
+    setTracks([]);
+    setAvailableArtists([]);
+  });
+}, []);
 
   // lista filt + caps
   const term = search.toLowerCase().trim();
   const filteredTracks = term
     ? tracks.filter((track: any) => {
+        const mainArtist = track.artists?.[0]?.name || '';
         const nameMatch = track.name.toLowerCase().includes(term);
         const albumMatch =
           track.albumName && track.albumName.toLowerCase().includes(term);
-        const artistMatch =
-          track.artists &&
-          track.artists.some((a: any) => a.name?.toLowerCase().includes(term));
+        const artistMatch = mainArtist.toLowerCase().includes(term);
         return nameMatch || albumMatch || artistMatch;
       })
-    : [];
+    : []; // tracks
 
   return (
     <IonPage>
@@ -57,13 +72,7 @@ const Tracks: React.FC = () => {
         {/* nav buttons */}
         <IonRow className="top-nav-row">
           <IonCol size="6" sizeMd="3">
-            <IonButton
-              className="nav-row"
-              expand="block"
-              color="medium"
-              fill="outline"
-              routerLink="/tracks"
-            >
+            <IonButton className="nav-row" expand="block" color="medium" fill="outline" routerLink="/tracks">
               Tracks
             </IonButton>
           </IonCol>
@@ -90,23 +99,21 @@ const Tracks: React.FC = () => {
         <IonModal
           className="filter-modal"
           isOpen={isFilterModalOpen}
-          onDidDismiss={() => setIsFilterModalOpen(false)}
-        >
+          onDidDismiss={() => setIsFilterModalOpen(false)}>
+
           <IonHeader>
             <IonToolbar>
-              <IonTitle className="filter-title">Filter by Genre</IonTitle>
-              <IonButtons slot="end">
-                <IonButton>Clear</IonButton>
-                <IonButton>Apply</IonButton>
-              </IonButtons>
+              <IonTitle className="filter-title">Filter by Artist</IonTitle>
             </IonToolbar>
           </IonHeader>
           <IonContent>
             <IonList>
-              <IonItem><IonLabel>Hip-Hop</IonLabel><IonCheckbox /></IonItem>
-              <IonItem><IonLabel>Soul</IonLabel><IonCheckbox /></IonItem>
-              <IonItem><IonLabel>Jazz</IonLabel><IonCheckbox /></IonItem>
-              <IonItem><IonLabel>R&B</IonLabel><IonCheckbox /></IonItem>
+              {availableArtists.map((artist) => (
+                <IonItem key={artist}>
+                  <IonLabel>{artist}</IonLabel>
+                  <IonCheckbox />
+                </IonItem>
+              ))}
             </IonList>
           </IonContent>
         </IonModal>
@@ -120,26 +127,32 @@ const Tracks: React.FC = () => {
             placeholder="Search by title, artist or album"/>
         </div>
 
-        {/* list */}
+        {/* Lista de tracks */}
         <IonList>
-          {filteredTracks.map((track: any) => (
-            <IonItem key={track.id}>
-              <IonAvatar>
-                <img src={track.albumImages?.[0]?.url} alt={track.albumName} />
-              </IonAvatar>
+          {filteredTracks.map((track: any) => {
+            const mainArtist = track.artists?.[0]?.name || '';
 
-              <IonLabel>
-                <h2>{track.name}</h2>
-                <p>Album: {track.albumName}</p>
-                <p>Artist:{' '} {track.artists?.length ? track.artists.map((a: any) => a.name).join(', ') : ''}</p>
-                <p>Genre:{' '} {track.genres?.length ? track.genres.join(', ') : ''}</p>
-              </IonLabel>
+            return (
+              <IonItem key={track.id}>
+                <IonAvatar slot="start">
+                  <img src={track.albumImages?.[0]?.url} alt={track.albumName} />
+                </IonAvatar>
 
-              {track.preview_url && (<IonButton slot="end" onClick={() => window.open(track.preview_url, '_blank')}>
-                  Preview
-                </IonButton>)}
-            </IonItem>
-          ))}
+                <IonLabel>
+                  <h2>{track.name}</h2>
+                  <p>Album: {track.albumName}</p>
+                  <p>Artist: {mainArtist}</p>
+                  <p>Genre:{' '} {track.genres?.length ? track.genres.join(', ') : ''} </p>
+                </IonLabel>
+
+                {track.preview_url && (
+                  <IonButton slot="end" onClick={() => window.open(track.preview_url, '_blank') }>
+                    Preview
+                  </IonButton>
+                )}
+              </IonItem>
+            );
+          })}
         </IonList>
       </IonContent>
     </IonPage>
