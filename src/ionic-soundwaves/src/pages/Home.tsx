@@ -5,7 +5,7 @@ import {informationCircleOutline,logoYoutube,logoInstagram,logoSoundcloud,logoTw
 import { SpotifyService } from "../services/spotify.service";
 
 const albumIds =
-  "7h5xn0Olvx2p0eQcSt1Osy,2Lq2qX3hYhiuPckC8Flj21,6jZ1z25PyF4Yd3kHxt9rl1,0hvT3yIEysuuvkK73vgdcW,4eLPsYPBmXABThSJ821sqY,3pLdWdkj83EYfDN6H2N8MR,50YNY0xy9uJ0U9eFQBdLJa,7vfuTRXIAYJz5Uc8SddnTr,0ks45m1bsP2JsZpM5D2FFA,79ONNoS4M9tfIA1mYLBYVX,748dZDqSZy6aPXKcI9H80u,05DePtm7oQMdL3Uzw2Jmsc,1aGapZGHBovnmhwqVNI6JZ,3Pi6o8NqDPlEBilGeMKi8q,55tK4Ab7XHTOKkw0xDz3AA";
+  "7h5xn0Olvx2p0eQcSt1Osy,2Lq2qX3hYhiuPckC8Flj21,6jZ1z25PyF4Yd3kHxt9rl1,0hvT3yIEysuuvkK73vgdcW,4eLPsYPBmXABThSJ821sqY,50YNY0xy9uJ0U9eFQBdLJa,7vfuTRXIAYJz5Uc8SddnTr,0ks45m1bsP2JsZpM5D2FFA,79ONNoS4M9tfIA1mYLBYVX,1aGapZGHBovnmhwqVNI6JZ,3Pi6o8NqDPlEBilGeMKi8q,7ycBtnsMtyVbbwTfJwRjSP";
 
 const Home: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
@@ -235,8 +235,8 @@ const Home: React.FC = () => {
               <IonCard className="news-card">
                 <div className="news-img-wrap">
                   <img
-                    src={albums[10]?.images?.[0]?.url}
-                    alt={albums[10]?.name}
+                    src={albums[11]?.images?.[0]?.url}
+                    alt={albums[11]?.name}
                     className="news-img"
                   />
                 </div>
