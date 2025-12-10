@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export class SpotifyService {
   baseUrl = 'https://spotify23.p.rapidapi.com';
-  apiKey = 'ab1aa24b1dmshd28fe80e43da5d5p103afejsn2099b818f1f4';
+  apiKey = '921347acf3msh3c3573e19979965p111c8fjsnd6bf9d87eab9';
   host = 'spotify23.p.rapidapi.com';
 
   getAlbums(ids: string): Promise<any> {
