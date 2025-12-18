@@ -4,6 +4,8 @@ import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 import Albums from './pages/Albums';
 import Tracks from './pages/Tracks';
+import Stats from './pages/Stats';
+
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -51,6 +53,10 @@ const App: React.FC = () => (
 
         <Route exact path="/albums">
           <Albums />
+        </Route>
+
+        <Route exact path="/stats/:index">
+          <Stats />
         </Route>
 
         <Route exact path="/">

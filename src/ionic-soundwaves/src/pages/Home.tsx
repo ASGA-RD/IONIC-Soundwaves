@@ -3,6 +3,14 @@ import {IonPage,IonHeader,IonIcon,IonToolbar,IonTitle,IonContent,IonGrid,IonRow,
 import "./Home.css";
 import {informationCircleOutline,logoYoutube,logoInstagram,logoSoundcloud,logoTwitter} from "ionicons/icons"; // icone
 import { SpotifyService } from "../services/spotify.service";
+import { Chart } from "react-google-charts";
+
+export const data = [
+  ["Albums", "Album N.", { role: "style" }],
+  ["Gold", 12, "#ffd700"],
+  ["Platinum", 37, "#e5e4e2"],
+  ["Diamond", 15, "#B9F2FF"],
+];
 
 const albumIds =
   "7h5xn0Olvx2p0eQcSt1Osy,2Lq2qX3hYhiuPckC8Flj21,6jZ1z25PyF4Yd3kHxt9rl1,0hvT3yIEysuuvkK73vgdcW,4eLPsYPBmXABThSJ821sqY,50YNY0xy9uJ0U9eFQBdLJa,7vfuTRXIAYJz5Uc8SddnTr,0ks45m1bsP2JsZpM5D2FFA,79ONNoS4M9tfIA1mYLBYVX,1aGapZGHBovnmhwqVNI6JZ,3Pi6o8NqDPlEBilGeMKi8q,7ycBtnsMtyVbbwTfJwRjSP";
@@ -149,6 +157,12 @@ const Home: React.FC = () => {
                   <IonIcon slot="icon-only" icon={logoTwitter}></IonIcon>
                 </IonButton>
               </IonCol>
+            </IonRow>
+            <IonRow>
+              <IonCol>
+                <Chart chartType="ColumnChart" width="100%" height="100%" data={data}
+                options={{title: 'Discography Overview', backgroundColor: '#eef0f2'}}/>
+                </IonCol>
             </IonRow>
           </IonContent>
         </IonModal>

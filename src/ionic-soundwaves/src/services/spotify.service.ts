@@ -29,6 +29,18 @@ export class SpotifyService {
     }).then((res) => res.data);
   }
 
+  getArtistsData(id: string): Promise<any> {
+    return axios({
+      url: `${this.baseUrl}/artist_discography_overview/`,
+      method: 'get',
+      params: { id },
+      headers: {
+        'x-rapidapi-key': this.apiKey,
+        'x-rapidapi-host': this.host,
+      },
+    }).then((res) => res.data);
+  }
+
   //------------------------------------------------------------------------------------------
   //helper
   //devolve as tracks com albumName, albumImages e genres
@@ -72,6 +84,7 @@ export class SpotifyService {
       return { ...track, genres: uniqueGenres };
     });
   }
+
 }
 
 /* project By Guilherme Andrade - A045395 */
