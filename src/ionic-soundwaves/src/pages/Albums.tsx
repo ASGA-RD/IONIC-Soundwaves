@@ -109,7 +109,7 @@ const Albums: React.FC = () => {
             <IonButton size="small" fill="outline" expand="block" onClick={() => setIsStatsModalOpen(true)}> Stats </IonButton>
           </IonRow>
 
-          <IonModal isOpen={isStatsModalOpen} onDidDismiss={() => setIsStatsModalOpen(false)}>
+          <IonModal className="modal-stats" isOpen={isStatsModalOpen} onDidDismiss={() => setIsStatsModalOpen(false)}>
             <IonHeader>
               <IonToolbar>
                 <IonTitle>Artist Stats</IonTitle>
